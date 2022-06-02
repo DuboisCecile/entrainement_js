@@ -31,13 +31,31 @@ const scores = [
   [0, 14, 11, 2, 12],
 ];
 
-const scoresTableBody = document.getElementById("scores");
+const scoresTableBody = document.getElementById("scores-table-body");
 
-scoresTableBody.innerHTML += `<tr>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>2</td>
-                              </tr>`;
+const average = (studentScores) => {
+  const row = document.createElement("tr");
+
+  let sum = 0;
+  for (let i = 0; i < 5; i++) {
+    const cell = document.createElement("td");
+    if (i < studentScores.length) {
+      cell.innerHTML = studentScores[i];
+      sum += studentScores[i];
+    }
+    row.appendChild(cell);
+  }
+
+  const averageCell = document.createElement("td");
+  averageCell.innerHTML =
+    studentScores.length !== 0
+      ? Math.round((sum / studentScores.length) * 10) / 10
+      : 0;
+  row.appendChild(averageCell);
+
+  scoresTableBody.appendChild(row);
+};
+
+for (studentScores of scores) {
+  average(studentScores);
+}
