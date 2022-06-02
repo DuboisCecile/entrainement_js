@@ -31,4 +31,4 @@ const scores = [
   [0, 14, 11, 2, 12],
 ];
 
-/* Calculer les moyennes de chaque liste de 5 notes et les afficher dans des console.log */
+
