@@ -31,4 +31,15 @@ const scores = [
   [0, 14, 11, 2, 12],
 ];
 
-/* Calculer les moyennes de chaque liste de 5 notes et les afficher dans des console.log */
+const average = (scores) => {
+  if (scores.length === 0) return 0;
+  let sum = 0;
+  for (let i = 0; i < scores.length; i++) {
+    sum += scores[i];
+  }
+  return Math.round((sum / scores.length) * 10) / 10;
+};
+
+for (studentScores of scores) {
+  console.log(average(studentScores));
+}
