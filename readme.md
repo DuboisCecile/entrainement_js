@@ -1,1 +1,1 @@
-# Entrainement au JavaScript pour débutants
+# Exercies d'entrainement au JavaScript pour débutants
